@@ -1,3 +1,6 @@
+# Andreas Westrell 2016
+# V1.3
+#
 from tkinter import *
 from tkinter import messagebox
 import csv
