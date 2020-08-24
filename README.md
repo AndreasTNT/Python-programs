@@ -7,8 +7,10 @@ dependencies: \
 Python 3 or newer
 
 # Windows / MacOS
-Create a new directory 
+Create a new directory \
 Clone this repository into the newly created directory
 
 # Linux
+Create a new directory\
+Clone this repository into the newly created directory
 
