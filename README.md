@@ -1,5 +1,5 @@
 # Python-programs
-A collection of hobby projects in python.\
+A collection of hobby projects in python.
 # How to run
 dependencies: \
 Python 3 or newer
