@@ -1,6 +1,7 @@
-# Andreas Westrell 2016
-# V1.3
+# Andreas Westrell 2016 - 2020
 #
+#
+
 from tkinter import *
 from tkinter import messagebox
 import csv
@@ -8,9 +9,13 @@ from tempfile import NamedTemporaryFile
 import shutil
 
 
+version = 1.3
+
+
+
 # Öppna patient filen och skriv ut patienter
 # -------------------------------------------
-def readPatiens ():
+def readPatient ():
 	csvfile = open('patienter.csv', 'r')
 	patientsObj=csv.reader(csvfile)
 	#for row in patientsObj:
@@ -58,7 +63,7 @@ def Save():
 	Age = age.get()
 	Health = health.get(ACTIVE)
 	Food = food.get()
-	Sex = sex.get(ACTIVE)
+	Gender = gender.get(ACTIVE)
 	PatientRowNum=0
 	# Kolla att man fyllt i Namn, ålder och hälsa
 	if (Age == "" or Name == "" or Health == ""):
@@ -90,21 +95,21 @@ def Save():
 				update=1
 				print ("Found patient. Update existing row ")
 				if (messagebox.askyesno("","Found patient.Update existing?")):
-					writer.writerow((Name,Age,Health,Food,Sex ))
+					writer.writerow((Name,Age,Health,Food,Gender ))
 				else:
 					print("Uppdaterar inte patient ", Name)
 					writer.writerow(row)
 			else:
 				writer.writerow(row)
 		if (update==0):
-			writer.writerow((Name,Age,Health,Food,Sex ))
+			writer.writerow((Name,Age,Health,Food,Gender ))
 
 	shutil.move(tempfile.name, filename)
 
 
 # -------------------------------------------
 def About():
-	messagebox.showinfo("About","@Doctor Andreas V.1.0 2016\nBy Andreas & Henrik Westrell.")
+	messagebox.showinfo("About","@Doctor Version: " + str(version) + " \n2016\nBy Andreas & Henrik Westrell.")
 
 # -------------------------------------------
 def callback():
@@ -114,60 +119,60 @@ def callback():
 	Name = name.get()
 
 	if (Age == "" or Name == ""):
-		messagebox.showerror("Error ", "Fyll i ålder och namn")
+		messagebox.showerror("Error ", "Fill in your age and name")
 		return None
 	Age = int(Age)
 	Sixty = 60
 	DiffSixty = Sixty - Age
 
-	yearslefttosixty = " om " + str(DiffSixty) + " år fyller du " + str(Sixty) + " år."
+	yearslefttosixty = " in " + str(DiffSixty) + " years, You will be " + str(Sixty) + " years old."
 	Health = health.get(ACTIVE)
-	Sex = sex.get(ACTIVE)
+	Gender = gender.get(ACTIVE)
 
 
 	Food = food.get()
 	if (0 < Age < 20):
-		if (Sex == "man"):
+		if (Gender == "male"):
 			nickname = "babyboy"
-		elif (Sex == "kvinna"):
-			nickname = "lilla flicka"
+		elif (Gender == "female"):
+			nickname = "little girl"
 	elif (20 < Age < 30):
-		if (Sex == "man"):
-			nickname = "snubbe"
-		elif (Sex == "kvinna"):
-			nickname = "tant"
+		if (Gender == "male"):
+			nickname = "dude"
+		elif (Gender == "female"):
+			nickname = "lady"
 	elif (30 < Age < 61):
-		if (Sex == "man"):
-			nickname = "gubbe"
-		elif (Sex == "kvinna"):
-			nickname = "kärring"
+		if (Gender == "male"):
+			nickname = "old man"
+		elif (Gender == "female"):
+			nickname = "hag"
 	elif (Age > 60):
-		if (Sex == "man"):
-			nickname = "senilgubbe"
-		elif (Sex == "kvinna"):
+		if (Gender == "male"):
+			nickname = "senile old man"
+		elif (Gender == "female"):
 			nickname = "baglady"
 		DiffSixty = Age - Sixty
-		yearslefttosixty = " du fyllde " + str(Sixty) + " för " + str(DiffSixty) + " år sedan."
+		yearslefttosixty = " you aged " + str(Sixty) + " for " + str(DiffSixty) + " years ago."
 	else:
-		if Sex == "man":
-			nickname = "pojkfjant"
-		elif (Sex == "kvinna"):
-			nickname = "brud"
+		if Gender == "male":
+			nickname = "foolish boy"
+		elif (Gender == "female"):
+			nickname = "bride"
 
-	message = "Du gillar alltså: " + Food + "\n"
-	if Health == "dåligt":
-		message = message + "Krya på dig  " + Name + ". Din  " + nickname + "..."
-	elif Health == "bra":
-		message = message + "Vad bra " + Name + ". God kväll " + nickname + yearslefttosixty
+	message = "So you like: " + Food + "\n"
+	if Health == "bad":
+		message = message + "Hope you get better  " + Name + ". Your  " + nickname + "..."
+	elif Health == "good":
+		message = message + "How good " + Name + ". Good evening " + nickname + yearslefttosixty
 	else:
-		message = message + ">> Hoppsan health = " + Health + " ogiltigt värde."
+		message = message + ">> Oops, health = " + Health + " unknown value."
 
 	messagebox.showinfo("Diagnos", message)
 
 # ------------------ Main program starts here -------------------------
 #"WindowCreater"
 root = Tk()
-root.title("Doktor Andreas")
+root.title("Doktor ")
 root.geometry("500x250")
 
 # create a pulldown menu, and add it to the menu bar
@@ -188,20 +193,20 @@ menubar.add_cascade(label="Help", menu=helpmenu)
 # display the menu
 root.config(menu=menubar)
 
-topLabel = Label(root, text="Vällkommen till Doktor Andreas").grid()
+topLabel = Label(root, text="Welcome to Doktor ").grid()
 topLabel1 = Label(root, text=" ").grid()
-name = 		makeEntry(root, "Skriv ditt namn:", 50,2)
-sex = 		makeList(root,"Kön:","man","kvinna",3)
-age =   makeEntry(root, "Hur gammal är du?", 50,4)
+name = 		makeEntry(root, "Write your name:", 50,2)
+gender = 		makeList(root,"Gender:","male","female",3)
+age =   makeEntry(root, "How old are you?", 50,4)
 # Age validation , only accept numeric digits
 # http://stackoverflow.com/questions/4140437/interactively-validating-entry-widget-content-in-tkinter/4140988#4140988
 age['validate'] = "key"
 age['validatecommand'] = (age.register(testVal),'%P','%i','%d')
-food =  makeEntry(root, "Favo mat?", 50,5)
+food =  makeEntry(root, "Favorite food", 50,5)
 
-health =    makeList(root, "Hur mår du?","bra","dåligt",6)
+health =    makeList(root, "How are you doing?","good","bad",6)
 
-DiagonsButton = Button(root, text="Visa Diagnos", width=10, command=callback).grid(sticky=W)
+DiagonsButton = Button(root, text="Show Diagnos", width=10, command=callback).grid(sticky=W)
 
 mainloop()
 
