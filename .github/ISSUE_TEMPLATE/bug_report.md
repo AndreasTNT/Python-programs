@@ -1,30 +1,32 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: 🐛 Bug report
+about: Report errors or unexpected behavior
 title: ''
-labels: 'Bug report, '
+labels: Issue-Bug
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## ℹ Computer information
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+- Python version: 
+- Running Python as Admin: True/False
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
 
-**Device (please complete the following information):**
- - OS: [e.g. iOS, Windows, MacOS, Linux]
+## 📝 Provide detailed reproduction steps (if any)
 
-**Python infomation**
-- Version: [Version of Python used]
+1. …
+2. …
+3. …
 
-**Additional context**
-Add any other context about the problem here.
+### ✔️ Expected result
+
+_What is the expected result of the above steps?_
+
+### ❌ Actual result
+
+_What is the actual result of the above steps?_
+
+## 📷 Screenshots
+
+_Are there any useful screenshots? Just paste them directly into the form_
