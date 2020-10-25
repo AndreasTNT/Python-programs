@@ -1,9 +1,9 @@
-<img src="./img/icon.png" width="250">
+<img src="./img/icon.png">
 
 ## Python-programs   
 
 A collection of hobby projects in python.
-## [Installation](https://github.com/AndreasTNT/Python-programs/wiki/Installation)
+[Installation](https://github.com/AndreasTNT/Python-programs/wiki/Installation)
 
 
 
