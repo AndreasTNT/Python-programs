@@ -5,7 +5,7 @@
 A collection of hobby projects in python.
 
 
-### Installtion 
+### Installation 
 ### dependencies:
 Python 3 or newer
 
