@@ -9,7 +9,7 @@ A collection of hobby projects in python.
 ## dependencies:
 Python 3 or newer
 
-## Installing Python
+### Installing Python
 Note: [Please refer to the official documentation for a more in-depth guide](https://docs.python.org)  
 
 ## Windows/MacOS 
@@ -35,15 +35,17 @@ Please see the instructions for your package manager
 2. Type `pacman -S Python3` in the terminal
 
 ## Cloning this repository
-## Note: Make sure you have git installed, if not install it
+
+### Note: Make sure you have git installed, if not install it
 Open a terminal\
 Type `git clone github.com/AndreasTNT/Python-programs/main`
 
-### You should now have:
-## Installed Python 3 
-## Cloned this repository
+## You should now have:
 
-### How to Run
+### Installed Python 3 
+### Cloned this repository
+
+## How to Run
 1. Go to the cloned repository
 2. Open subfolder "Main-and-depends"
 3. Run "Doctor.py" with Python (In terminal or with IDLE and Run it from there)  
