@@ -1,4 +1,4 @@
-<img src="./img/icon.png">
+
 
 ## Python-programs   
 
