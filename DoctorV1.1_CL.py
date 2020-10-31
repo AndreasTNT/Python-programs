@@ -1,9 +1,9 @@
 print("Welcome to Doctor !")
 name = input("Write your name: ")
-health = input("Hello " + name + ", how are you? [good|bad]?")
-age = input("How old are you?")
-gender = input("Gender [male|female]?")
-food = input("Favorite food?")
+health = input("Hello " + name + ", how are you? [good|bad]? ")
+age = input("How old are you? ")
+gender = input("Gender [male|female]? ")
+food = input("Favorite food? ")
 sixty = 60
 nickname = "filur"
 yearslefttosixty = sixty - int(age)
